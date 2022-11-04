@@ -1,0 +1,36 @@
+- "(" 이 몇번째 글자인지 찾기
+
+=find('(',대상 셀)
+
+
+- 왼쪽에서 그곳전까지 추출
+
+=left(대상 셀, len(대상 셀)-몇번째 글자인지 찾아놓은 셀)
+
+*left 함수 : byte 단위로 문자 출력가능
+ex) =left("안녕하세요",2) => "안녕"
+
+
+<특정 문자로 시작하는 단어 추출>
+-'시 '로 시작하는 문자열부터 뒤에 전부 들고오기
+
+=trim(left(substitute(mid(대상 셀,find("시 ",대상셀),len(대상셀)),"",rept("".len(대상셀))),len(대상셀)))
+
+*find 
+*trim 함수 : 문장의 앞 옆과 문장 사이에 불필요하게 포함되어있는 공백을 제거
+ex) A1셀 = "                          서울시    강남구    대치동   "
+         =trim(A1) => "서울시 강남구 대치동"
+*substitute 함수 : 
+
+
+
+참고
+
+https://ko.extendoffice.com/excel/formulas/excel-extract-word-beginning-with.html
+https://lightblog.tistory.com/61
+https://www.oppadu.com/%EC%97%91%EC%85%80-vlookup-%ED%95%A8%EC%88%98/
+https://ko.extendoffice.com/documents/excel/3370-excel-check-if-cell-begins-ends-with.html
+https://www.oppadu.com/if-%ED%95%A8%EC%88%98-%ED%8A%B9%EC%A0%95-%EB%AC%B8%EC%9E%90-%ED%8F%AC%ED%95%A8/
+https://elwlsek.tistory.com/421
+https://melonmilk.tistory.com/entry/%EC%97%91%EC%85%80-COUNTIF-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%A1%B0%EA%B1%B4%EC%9D%84-%EB%A7%8C%EC%A1%B1%ED%95%98%EB%8A%94-%EC%85%80-%EA%B0%9C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0
+
